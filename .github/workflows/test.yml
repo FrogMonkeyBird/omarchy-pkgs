@@ -74,6 +74,7 @@ jobs:
               ./tests/controller.sh
               ./tests/artifact-helpers.sh
               ./tests/build-matrix.sh
+              ./tests/check-dkms.sh
               ./tests/limine-mkinitcpio-hook.sh
               ./tests/voxtype-bin-install.sh
               ./tests/1password-polkit-owners.sh
