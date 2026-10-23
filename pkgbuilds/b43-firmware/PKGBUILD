@@ -19,8 +19,10 @@ license=('LicenseRef-Broadcom-proprietary')
 makedepends=('b43-fwcutter')
 conflicts=('b43-firmware-classic')
 options=('!strip' '!debug' '!emptydirs')
-source=("https://github.com/minios-linux/b43-firmware/releases/download/b43-firmware/broadcom-wl-${pkgver}.tar.bz2")
-sha256sums=('a07c3b6b277833c7dbe61daa511f908cd66c5e2763eb7a0859abc36cd9335c2d')
+source=("https://github.com/minios-linux/b43-firmware/releases/download/b43-firmware/broadcom-wl-${pkgver}.tar.bz2"
+        'LICENSE')
+sha256sums=('a07c3b6b277833c7dbe61daa511f908cd66c5e2763eb7a0859abc36cd9335c2d'
+            'bf4ec999b4f7636f7c2a9eb304bea4052a936a30bdb7ef6a826de08ed995892c')
 
 package() {
   local firmware=$pkgdir/usr/lib/firmware
@@ -32,5 +34,5 @@ package() {
 
   [[ -f $firmware/b43/ucode30_mimo.fw ]]
 
-  install -Dm644 "$startdir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
